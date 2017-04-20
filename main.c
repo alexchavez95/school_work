@@ -1,38 +1,22 @@
 #include <stdio.h>
-#include <string.h>
+#include <stdlib.h>
+#include <time.h>
+
+//automatically fills array of 10 spaces with random numbers from 1-10
 
 void main()
 {
-    int num;
-    int array[num];
-    //int num; //number of things in array
-    int elem;
-
-    printf("how many elements? ");
-    scanf("%d", &num);
-
-    printf("\nEnter contents of array ");
-
-    for (int i = 0; i < num; i++)
-    {
-        scanf("%d", &elem);
-        array[i] = elem;
-    }
-
+    char array[10];
     int i;
-    int small = array[i];
-    int position;
+    time_t t;
+    srand((unsigned)time(&t));
+    int num = rand()%9+1;
 
-    for (int i = 0; i < num; i++)
+    for (i = 0; i < 10; i++)
     {
-        if (array[i] < small)
-        {
-            small = array[i];
-            position = i;
-        }
+        array[num] = rand() % 9 + 1;
+        printf("%d ", array[num]);
     }
-    printf("\nelem of small %d", small);
-    printf("\nposition of small is %d\n", position);
 
 }
 
